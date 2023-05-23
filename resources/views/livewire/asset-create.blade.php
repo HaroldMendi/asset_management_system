@@ -1,3 +1,10 @@
+
+<x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+         {{ __('Create Asset') }}
+    </h2>
+</x-slot>
+
 <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -29,7 +36,7 @@
                                 <!-- Type_id -->
                                 <div class="col-span-6 sm:col-span-4 rounded-md">
                                   <x-label for="select-option" value="{{ __('Select Type') }}" />
-                                    <select wire:model.defer="type_id" id="select-option" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <select wire:model.defer="type_id" id="type_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         <option value="">-- Select type --</option>
                                         @foreach ($options as $option)
                                             <option value="{{ $option->id }}">{{ $option->type }}</option>

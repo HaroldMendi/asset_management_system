@@ -24,7 +24,9 @@ class AssetCreate extends Component
             'min:3',
             'max:20',
         ],
-        // 'type_id' => 'required',
+        'type_id' => [
+            'required',
+        ],
     ];
 
     public function AddAsset()
