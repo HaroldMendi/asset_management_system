@@ -61,11 +61,12 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function asset() {
+    public function created_assets() {
         return $this->hasMany(asset::class, 'created_by_id');
     }
 
     public function assettag() {
         return $this->hasMany(AssetTag::class, 'created_by_id');
     }
+
 }

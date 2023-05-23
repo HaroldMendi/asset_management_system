@@ -22,7 +22,7 @@ Route::middleware([
     Route::resource('/asset', AssetController::class);
 
     // Asset Tag Route
-    Route::get('/asset-tag/create/{id}', [AssetTagController::class, 'createAssetTag'])->name('asset_tag.create');
+//    Route::get('/assets/{asset}/tags/create', [AssetTagController::class, 'createAssetTag'])->name('asset_tag.create');
     Route::resource('/asset-tag', AssetTagController::class);
 
     // Livewire Asset Create

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->longText('other_information');
             $table->unsignedInteger('status_id');
             $table->unsignedInteger('purchase_id')->nullable();
-            $table->float('purchase_price');
+            $table->decimal('purchase_price');
             $table->unsignedInteger('asset_id');
             $table->unsignedInteger('created_by_id');
             $table->unsignedInteger('updated_by_id')->nullable();

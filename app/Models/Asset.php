@@ -8,18 +8,21 @@ use App\Models\AssetTag;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class asset extends Model
+class Asset extends Model
 {
     use HasFactory;
 
     protected $table = 'asset';
 
-    public function user(){
-        return $this->belongsTo(User::class, 'created_by_id', 'id');
+    const STATUS_AVAILABLE = 'available';
+    const STATUS_DISPOSED = 'disposed';
+
+    public function creator(){
+        return $this->belongsTo(User::class, 'created_by_id');
     }
 
     public function type() {
-        return $this->belongsTo(Type::class, 'type_id', 'id');
+        return $this->belongsTo(Type::class, 'type_id');
     }
 
     public function AssetTag() {

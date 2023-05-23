@@ -10,15 +10,13 @@ use App\Models\AssetTag;
 
 class AssetTagController extends Controller
 {
-    // Asset Tag Index
     public function index()
     {
         $asset_tag = AssetTag::Latest()->with('asset')->get();
         return view('asset_tag.asset_tag_index', compact('asset_tag'));
     }
 
-    //Create Asset Tag
-    public function createAssetTag($id)
+    public function create($id)
     {
         $asset = asset::where('id', $id)->get();
         return view('asset_tag.asset_tag_create', compact('asset'));
@@ -38,9 +36,14 @@ class AssetTagController extends Controller
         $asset_tag_data->save();
         return redirect()->route('asset-tag.index');
     }
-    
 
-    // Edit Asset Tag
+
+    public function show(string $id)
+    {
+        //
+    }
+
+
     public function edit($id)
     {
         $asset_tag = AssetTag::where('id', $id)->get();
@@ -48,7 +51,7 @@ class AssetTagController extends Controller
         return view('asset_tag.asset_tag_edit',compact('asset_tag', 'asset'));
     }
 
-  
+
     public function update(AssetTagRequest $request)
     {
         $asset_tag_data = AssetTag::find($request->id);

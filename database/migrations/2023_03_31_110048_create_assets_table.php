@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('asset', function (Blueprint $table) {
+        Schema::create('assets', function (Blueprint $table) {
             $table->id();
+            $table->string('serial_number')->index();
+            $table->string('status')->index()->default('available');
+            $table->unsignedInteger('model_id')->index();
+            $table->unsignedInteger('type_id')->index();
+            $table->unsignedInteger('purchase_id')->index();
+            $table->unsignedInteger('created_by_id')->index();
             $table->timestamps();
-            $table->string('brand');
-            $table->string('model');
-            $table->unsignedInteger('created_by_id');
-            $table->unsignedInteger('updated_by_id')->nullable();
-            $table->unsignedInteger('type_id');
         });
     }
 
