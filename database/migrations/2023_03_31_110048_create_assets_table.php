@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('serial_number')->index();
             $table->string('status')->index()->default('available');
-            $table->unsignedInteger('model_id')->index();
+            $table->unsignedInteger('brand_id')->index();
             $table->unsignedInteger('type_id')->index();
             $table->unsignedInteger('purchase_id')->index();
             $table->unsignedInteger('created_by_id')->index();

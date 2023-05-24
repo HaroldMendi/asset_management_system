@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-use App\Models\asset;
+use App\Models\Asset;
 use App\Models\AssetTag;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -62,7 +62,7 @@ class User extends Authenticatable
     ];
 
     public function created_assets() {
-        return $this->hasMany(asset::class, 'created_by_id');
+        return $this->hasMany(Asset::class, 'created_by_id');
     }
 
     public function assettag() {
